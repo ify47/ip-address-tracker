@@ -1,0 +1,48 @@
+@import './variables';
+
+@media (max-width: 600px) {
+    main {
+
+        .textbox {
+            max-width: 86%;
+            justify-content: center;
+
+
+            input {
+                width: 86%;
+                padding-left: 16px;
+                line-height: 22px;
+                font-size: unset;
+
+                &::placeholder {
+                    font-size: 0.73rem;
+                }
+            }
+    }
+
+    .info {
+        max-width: 86%;
+
+        .box {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+
+            hr {
+                display: none;
+            }
+
+
+            .boxinfo {
+                margin: 12px 0;
+                width: auto;
+
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+}

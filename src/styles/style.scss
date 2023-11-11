@@ -1,0 +1,135 @@
+@use './common/mediaquery';
+@import './common/variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $font;
+  }
+
+  body {
+    overflow: hidden;
+  }
+  
+  .desktopbg {
+    width: 100%;
+    height: 228px;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  header {
+    position: relative;
+    margin: auto;
+    padding-top: 37px;
+    text-align: center;
+    color: white;
+
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+  }
+
+  .textbox {
+    display: flex;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 468px;
+
+
+    input {
+      padding: 10px 12px;
+      border-radius: 12px 0 0 12px;
+      border: none;
+      width: 24rem;
+      font-size: 18px;
+      padding-left: 26px;
+
+      &::placeholder {
+        font-size: 1rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    button {
+      display: flex;
+      border-radius: 0 12px 12px 0;
+      background-color: black;
+      width: 46px;
+      justify-content: center;
+      align-items: center;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $V_darkGray;
+      }
+    }
+  }
+
+  .info {
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    width: 880px;
+    max-width: 97%;
+    z-index: 1000;
+
+    .box {
+      display: flex;
+      background-color: white;
+      justify-content: space-evenly;
+      border-radius: 10px;
+
+      hr {
+        height: 60px;
+        margin: auto;
+      }
+
+     .boxinfo {
+      margin: 35px 31px;
+      width: 9rem;
+
+      h2 {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: $darkGray;
+      }
+
+      p{
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+     }
+
+     
+    }
+   
+  }
+
+  .maps .leaflet-container {
+     width: 100%; 
+     height: 82vh;
+     margin-top: 83px;
+   }
+
+   .leaflet-control-zoom.leaflet-bar.leaflet-control {
+    display: none;
+   }
+  
+
+
+
+  
