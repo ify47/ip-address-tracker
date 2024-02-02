@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import arrowIcon from "../assets/icon-arrow.svg";
 import validator from "validator";
 import { useAppDispatch } from "../redux/hooks";
 import { fetchAddress, fetchIp } from "../redux/api/geoApi";
+import axios from "axios";
 
 export const SearchBox = () => {
   const [value, setValue] = useState("");
@@ -15,6 +16,19 @@ export const SearchBox = () => {
       dispatch(fetchAddress(value));
     } else return;
   };
+
+  const isMounted = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (isMounted.current) return;
+    const getUserIp = async () => {
+      const res = await axios.get("https://api.ipify.org");
+      setValue(res.data);
+      dispatch(fetchIp(res.data));
+    };
+    getUserIp();
+    isMounted.current = true;
+  }, [dispatch]);
 
   return (
     <>
