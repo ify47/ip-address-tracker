@@ -18,7 +18,6 @@ export const SearchBox = () => {
   };
 
   const isMounted = useRef<boolean>(false);
-
   useEffect(() => {
     if (isMounted.current) return;
     const getUserIp = async () => {
